@@ -26,3 +26,22 @@ app.controller('authController', function($scope){
     $scope.error_message = 'registeration request for ' + $scope.user.username;
   };
 });
+
+app.config(function($routeProvider){
+  $routeProvider
+    //the timeline display
+    .when('/', {
+      templateUrl: 'main.html',
+      controller: 'mainController'
+    })
+    //the login display
+    .when('/login', {
+      templateUrl: 'login.html',
+      controller: 'authController'
+    })
+    //the signup display
+    .when('/register', {
+      templateUrl: 'register.html',
+      controller: 'authController'
+    });
+});
